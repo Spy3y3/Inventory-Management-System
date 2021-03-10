@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Stock Report</title>
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'inv.png' )}}">
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="well text-center">
+
+        <h1>Inventory Management System</h1>
+
+    </div>
+</div>
+
+
+   <div class="container">
+        <div class="well text-center">
+            <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+                <h4><a class="nav-item nav-link active" class="/home" href="/index">Home</a></h4>
+        </div>
+    </div>
+
+
+    <table class="table table-striped">
+    <thead>
+      <tr>
+            <th class="text-info">Product Name</th>
+            <th class="text-info">Quantity</th>
+      </tr>
+    </thead>
+        <tbody>
+        {% for row in stockreport %}
+            <tr>
+                <td>{{row.1}}</td>
+                <td>{{row.3}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
